@@ -1,10 +1,13 @@
 # cap solver
 
-MVP API для решения капчи Тиктока, актуальной на 2020 год.
+MVP API для решения капчи Тиктока, актуальной на 2020 год. 
+
 Пробив около 30-40%, без использования ML/AI/opencv/тяжелых вычислений.
 
-Примеры капч на тот момент - в папке ./tiktok_cap
-Смысл в том, что несколько 3D-фигур с буквами/цифрами раскиданы по картинке, с небольшими вариантами (типа поворот изменен, освещение итд). Для решения капчи - пользователю нужно отметить 2 одинаковых фигурки.
+Примеры капч на тот момент - в папке ./tiktok_cap 
+![captcha example](https://raw.githubusercontent.com/moonsly/tiktok_cap_cv/main/cap.png)
+
+Смысл в том, что несколько 3D-фигур с буквами/цифрами раскиданы по картинке, с небольшими вариантами (типа изменен поворот, цвет, освещение итд). Для решения капчи - пользователю нужно отметить мышкой 2 одинаковых фигурки (т.е. определить их области - 2 ограничивающих прямоугольника с координатами).
 
 Для решения капчи используется такой алгоритм:
 1) определяем области фигурок, методом обхода их границ (пока не вернемся в 1ю встреченную точку границы фигуры)
@@ -22,14 +25,14 @@ MVP API для решения капчи Тиктока, актуальной н
 
 Были планы докрутить и попробовать продать это как Antigate API, но только для арбитражников Тиктока (прикрутить платежный шлюз, ЛК, вынести задачи в очередь итд), но остались только в TODO.
 
-TODO0 print -> logging
-TODO0.1 move cap tasks to separate queue, multitask - NOT WORKING on RPS5.sh (5 req/seq)
-TODO1 refactoring: move to lib, logging, gunicorn deploy
-TODO2 add DB for users, tasks, API keys, img paths, area rectangles/bound pixels
-TODO3 rucaptcha API for rechecking/testing/improving detect algorithm
-TODO4 auth, balance (via shop?)
-TODO5 API call for bad cap reports (dont' charge money)
-TODO6 quality control (percent of bads from user VS system avg bads)
+1) TODO print -> logging
+2) TODO move cap tasks to separate queue, multitask - NOT WORKING on RPS5.sh (5 req/seq)
+3) TODO refactoring: move to lib, logging, gunicorn deploy
+4) TODO add DB for users, tasks, API keys, img paths, area rectangles/bound pixels
+5) TODO rucaptcha API for rechecking/testing/improving detect algorithm
+6) TODO auth, balance (via shop?)
+7) TODO API call for bad cap reports (dont' charge money)
+8) TODO quality control (percent of bads from user VS system avg bads)
 
 # запуск АПИ
 
