@@ -60,4 +60,6 @@ curl -X POST -H "Content-Type: multipart/form-data"  -F 'file=@cap3.jpg' -F "api
 
 # autotests
 
+cp ./caps_test/* ./
+
 bash ./TEST_CAP5.sh
